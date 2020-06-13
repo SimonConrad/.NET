@@ -1,6 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Orders.Dal;
+using Orders.Dal.Dbos;
 using Orders.Web.RequestModels;
 
 namespace Orders.Web.Controllers
@@ -10,11 +14,18 @@ namespace Orders.Web.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        private readonly IProductRepository _productRepository;
+
+        public ProductController(IProductRepository productRepository)
+        {
+            _productRepository = productRepository;
+        }
+
         [HttpGet]  // INFO idempotenta i bezpieczna
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> Get()
+        public async ValueTask<IActionResult> Get()
         {
-            await Task.Delay(100);
+            IEnumerable<ProductDbo> resTemp = await _productRepository.Get();
 
             return Ok();
         }
@@ -22,9 +33,14 @@ namespace Orders.Web.Controllers
         [HttpGet("{id}")] // INFO idempotenta i bezpieczna
         [ProducesResponseType(StatusCodes.Status200OK)] // INFO, Dla Swagger-a
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Get(int id)
+        public async ValueTask<IActionResult> Get(long id)
         {
-            await Task.Delay(100);
+            ProductDbo resTemp = await _productRepository.Get(id);
+
+            if (resTemp == null)
+            {
+                return NotFound();
+            }
 
             return Ok();
         }
@@ -32,20 +48,25 @@ namespace Orders.Web.Controllers
         [HttpPost] // INFO nieidempotenta i niebezpieczna
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Post([FromBody] ProductReqModel productReqModel)
-        {
-            await Task.Delay(100);
+        public async ValueTask<IActionResult> Post([FromBody] ProductReqModel productReqModel)
+        { 
+            long id = await _productRepository.Create(new ProductDbo());
 
-            return Ok();
+           return CreatedAtAction(nameof(Get), new { id = id });
         }
 
         [HttpPut("{id}")] // INFO idempotenta i niebezpieczna
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Put(int id, [FromBody] ProductReqModel productReqMode)
+        public async ValueTask<IActionResult> Put(long id, [FromBody] ProductReqModel productReqMode)
         {
-            await Task.Delay(100);
+            if (!(await _productRepository.Exists(id)))
+            {
+                return NotFound();
+            }
+
+            await _productRepository.Update(id, new ProductDbo());
 
             return NoContent();
         }
@@ -53,9 +74,14 @@ namespace Orders.Web.Controllers
         [HttpDelete("{id}")] // INFO idempotenta i niebezpieczna
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Delete(int id)
+        public async ValueTask<IActionResult> Delete(long id)
         {
-            await Task.Delay(100);
+            if (!(await _productRepository.Exists(id)))
+            {
+                return NotFound();
+            }
+
+            await _productRepository.Delete(id);
 
             return NoContent();
         }

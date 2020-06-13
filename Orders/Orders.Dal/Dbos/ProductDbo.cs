@@ -1,6 +1,6 @@
-﻿namespace Orders.Web.RequestModels
+﻿namespace Orders.Dal.Dbos
 {
-    public class ProductReqModel
+    public class ProductDbo
     {
         public long Id { get; set; }
         public string Name { get; set; }

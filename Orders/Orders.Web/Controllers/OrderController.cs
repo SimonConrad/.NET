@@ -31,6 +31,13 @@ namespace Orders.Web.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Post([FromBody] OrderReqModel orderReqModel)
         {
+            // INFO The[ApiController] attribute makes model validation errors automatically trigger an HTTP 400 response.
+            // Consequently, the following code is unnecessary in an action method:
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest("Invalid data");
+            //}
+
             return Ok();
         }
     }
