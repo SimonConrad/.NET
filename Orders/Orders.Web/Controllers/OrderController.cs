@@ -5,13 +5,14 @@ using Orders.Web.RequestModels;
 
 namespace Orders.Web.Controllers
 {
+    // TODO Obsługa [Authorize]
     [ApiController]
     [Route("api/[controller]")]
-    public class OrdersController : ControllerBase
+    public class OrderController : ControllerBase
     {
-        private readonly ILogger<OrdersController> _logger;
+        private readonly ILogger<OrderController> _logger;
 
-        public OrdersController(ILogger<OrdersController> logger)
+        public OrderController(ILogger<OrderController> logger)
         {
             _logger = logger;
         }
@@ -20,7 +21,7 @@ namespace Orders.Web.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult Get()
         {
-            _logger.LogInformation($"Hello from GET inside {nameof(OrdersController)}");
+            _logger.LogInformation($"Hello from GET inside {nameof(OrderController)}");
 
             return Ok();
         }
