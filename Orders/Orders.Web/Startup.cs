@@ -5,6 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Orders.Dal;
+using Orders.Dal.Repositories;
 using Orders.Web.Setup;
 
 namespace Orders.Web
@@ -34,6 +36,7 @@ namespace Orders.Web
         private void RegisterServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(MappingProfile));
+            services.AddSingleton<IProductRepository, DictionaryProductRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
