@@ -1,12 +1,14 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Orders.Dal;
 using Orders.Dal.Repositories;
+using Orders.Dal.Repositories.EFSqlServerRepository;
 using Orders.Web.Setup;
 
 namespace Orders.Web
@@ -23,6 +25,8 @@ namespace Orders.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<OrdersDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Default"]));
+
             services.AddControllers();
 
             RegisterServices(services);
@@ -36,7 +40,8 @@ namespace Orders.Web
         private void RegisterServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(MappingProfile));
-            services.AddSingleton<IProductRepository, DictionaryProductRepository>();
+            //services.AddSingleton<IProductRepository, DictionaryProductRepository>();
+            services.AddScoped<IProductRepository, EfSqlServerProductRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
