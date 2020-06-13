@@ -26,6 +26,8 @@ namespace Orders.Web.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            _logger.LogInformation($"Hello from GET inside {nameof(WeatherForecastController)}");
+
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
