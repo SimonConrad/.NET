@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Orders.Dal;
@@ -15,10 +17,13 @@ namespace Orders.Web.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IProductRepository _productRepository;
+        private readonly IMapper _mapper;
 
-        public ProductController(IProductRepository productRepository)
+        public ProductController(IProductRepository productRepository, 
+            IMapper mapper)
         {
             _productRepository = productRepository;
+            _mapper = mapper;
         }
 
         [HttpGet]  // INFO idempotenta i bezpieczna
@@ -26,8 +31,9 @@ namespace Orders.Web.Controllers
         public async ValueTask<IActionResult> Get()
         {
             IEnumerable<ProductDbo> resTemp = await _productRepository.Get();
+            var res = resTemp.Select(x => _mapper.Map<ProductReqModel>(x));
 
-            return Ok();
+            return Ok(res);
         }
 
         [HttpGet("{id}")] // INFO idempotenta i bezpieczna
@@ -42,7 +48,9 @@ namespace Orders.Web.Controllers
                 return NotFound();
             }
 
-            return Ok();
+            var res = _mapper.Map<ProductReqModel>(resTemp);
+
+            return Ok(res);
         }
 
         [HttpPost] // INFO nieidempotenta i niebezpieczna
@@ -50,7 +58,7 @@ namespace Orders.Web.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async ValueTask<IActionResult> Post([FromBody] ProductReqModel productReqModel)
         { 
-            long id = await _productRepository.Create(new ProductDbo());
+            long id = await _productRepository.Create(_mapper.Map<ProductDbo>(productReqModel));
 
            return CreatedAtAction(nameof(Get), new { id = id });
         }
@@ -66,7 +74,7 @@ namespace Orders.Web.Controllers
                 return NotFound();
             }
 
-            await _productRepository.Update(id, new ProductDbo());
+            await _productRepository.Update(id, _mapper.Map<ProductDbo>(productReqMode));
 
             return NoContent();
         }

@@ -1,9 +1,11 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Orders.Web.Setup;
 
 namespace Orders.Web
 {
@@ -21,10 +23,17 @@ namespace Orders.Web
         {
             services.AddControllers();
 
+            RegisterServices(services);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo() { Title = "Orders API", Version = "v1" });
             });
+        }
+
+        private void RegisterServices(IServiceCollection services)
+        {
+            services.AddAutoMapper(typeof(MappingProfile));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
