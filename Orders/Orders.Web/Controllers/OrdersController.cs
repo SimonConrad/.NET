@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Orders.Web.RequestModels;
 
 namespace Orders.Web.Controllers
 {
@@ -21,6 +22,13 @@ namespace Orders.Web.Controllers
         {
             _logger.LogInformation($"Hello from GET inside {nameof(OrdersController)}");
 
+            return Ok();
+        }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public IActionResult Post([FromBody] OrderReqModel orderReqModel)
+        {
             return Ok();
         }
     }
