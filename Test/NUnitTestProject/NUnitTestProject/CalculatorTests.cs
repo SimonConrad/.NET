@@ -34,7 +34,7 @@ namespace NUnitTestProject
             var res = calculator.Divide(2, 2);
 
             // Assert
-            res.Should().Equals(1);
+            res.Should().Be(1);
         }
 
         [Test]
@@ -52,6 +52,36 @@ namespace NUnitTestProject
 
             // Assert
             actionToTest.Should().Throw<ArgumentException>();
+        }
+
+        // TDD - Red, Green, Refactor
+        [Test]
+        public void CalculatorTestsSum_WhenSumBelowOrEqulas5_ThenDoNormalSumming()
+        {
+            // Arrange
+            var dependency = new Mock<ICalculatorDependency>();
+            var calculator = new Calculator(dependency.Object);
+
+            // Act
+            double result = calculator.Sum(1, 2);
+
+            // Assert
+            result.Should().Be(3);
+        }
+
+        // TDD - Red, Green, Refactor
+        [Test]
+        public void CalculatorTestsSum_WhenSumExtends5_ThenReturn5()
+        {
+            // Arrange
+            var dependency = new Mock<ICalculatorDependency>();
+            var calculator = new Calculator(dependency.Object);
+
+            // Act
+            double result = calculator.Sum(3, 7);
+
+            // Assert
+            result.Should().Be(5);
         }
     }
 }

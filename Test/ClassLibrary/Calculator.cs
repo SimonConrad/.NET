@@ -22,5 +22,17 @@ namespace ClassLibrary
             var res = a / b;
             return res;
         }
+
+        public double Sum(double firstElement, double secondElement)
+        {
+            double sum = firstElement + secondElement;
+
+            if (sum > 5)
+            {
+                return 5;
+            }
+
+            return sum;
+        }
     }
 }
