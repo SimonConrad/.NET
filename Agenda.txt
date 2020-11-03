@@ -1,0 +1,8 @@
+Omówienie obecnego stanu .NET-a
+.NET Framework, .NET Core, .NET 5 - rysunek
+Przykłady na .NET Core
+- aplikacja konsolowa
+- aplikacja wpf-owa - główne koncpety
+- aplikacja winformsówa - główne koncpety
+- aplikacja asp.net core web api - główne koncpety
+- test - główne koncpety AAA, biblioteka do testowania, bogus, biblioteka fluent assertions. bilbioteka do mockowania
