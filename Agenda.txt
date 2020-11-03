@@ -1,8 +1,22 @@
 Omówienie obecnego stanu .NET-a
 .NET Framework, .NET Core, .NET 5 - rysunek
-Przykłady na .NET Core
+Przykłady na .NET Core i .NET 4.7
 - aplikacja konsolowa
 - aplikacja wpf-owa - główne koncpety
-- aplikacja winformsówa - główne koncpety
+- aplikacja winformsówa - główne koncpety, case analizy nieznanego kodu |(klikanie,debugowanie, czytanie na sucho)
 - aplikacja asp.net core web api - główne koncpety
 - test - główne koncpety AAA, biblioteka do testowania, bogus, biblioteka fluent assertions. bilbioteka do mockowania
+- windows service
+- biblioteka
+
+VS
+Tryb debug okienka, debuger
+Tryb chodzenia po kodzi skróty do nawigacji, okienko Object Browser
+Skróty do Refactoringu
+
+
+
+Modele deploy-api
+Publish do systemu plików + podpiecie pod IIS-a
+Deploy na Azure App Service
+Wspomniec o buildach CI + Release Pipelineach
