@@ -13,6 +13,7 @@ VS
 Tryb debug okienka, debuger
 Tryb chodzenia po kodzi skróty do nawigacji, okienko Object Browser
 Skróty do Refactoringu
+Skrtóty klawiszowe - pdf do kodu
 
 
 
