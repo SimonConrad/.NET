@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 
-namespace MVVMDemo
+namespace WPFPlayground
 {
     public class ViewModelBase : INotifyPropertyChanged
     {

@@ -22,7 +22,7 @@ namespace WPFPlayground
     {
         public MainWindow()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
     }
 }

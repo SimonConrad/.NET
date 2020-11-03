@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
 
-namespace MVVMDemo
+namespace WPFPlayground
 {
     public class ViewModel : ViewModelBase
     {

@@ -1,12 +1,39 @@
-﻿<Window x:Class="WPFPlayground.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPFPlayground"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+﻿<Window x:Class="WPFPlayground.Views.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"    
+        xmlns:viewmodel="clr-namespace:WPFPlayground"
+        Height="300" Width="300">
+    <Window.Resources>
+        <viewmodel:ViewModel x:Key="ViewModel"/>
+        <viewmodel:DatetimeToDateConverter x:Key="MyConverter"/>
+    </Window.Resources>
+    <Grid DataContext="{Binding Source={StaticResource ViewModel}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Name" HorizontalAlignment="Center"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Width="100" HorizontalAlignment="Center" Text="{Binding Student.Name, Mode=TwoWay}"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Age" HorizontalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Width="100" HorizontalAlignment="Center" Text="{Binding Student.Age, Mode=TwoWay}"/>
+        <Button Content="Submit" Command="{Binding SubmitCommand}" HorizontalAlignment="Right" Grid.Row="2" Grid.Column="0"/>
+        <ListView ItemsSource="{Binding Students}" Grid.Row="3" Grid.Column="1" Width="200">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="60"/>
+                    <GridViewColumn  Header="Age" DisplayMemberBinding="{Binding Age}" Width="60"/>
+                    <GridViewColumn  Header="Joining Date" DisplayMemberBinding="{Binding JoiningDate, Converter={StaticResource MyConverter}}" Width="80" />
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>
