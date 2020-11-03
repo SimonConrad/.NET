@@ -6,8 +6,12 @@ Przykłady na .NET Core i .NET 4.7
 - aplikacja winformsówa - główne koncpety, case analizy nieznanego kodu |(klikanie,debugowanie, czytanie na sucho)
 - aplikacja asp.net core web api - główne koncpety
 - test - główne koncpety AAA, biblioteka do testowania, bogus, biblioteka fluent assertions. bilbioteka do mockowania
-- windows service
+- worker service
 - biblioteka
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
 
 VS
 Tryb debug okienka, debuger
@@ -16,6 +20,160 @@ Skróty do Refactoringu
 Skrtóty klawiszowe - pdf do kodu
 
 
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+1. CTRL+Q for Quick Launch
+CTRL+Q opens the quick launch so you can search an indexed list of every feature available in Visual Studio. For example, If you want to do add a new item, use the quick launch to with that as your search term and receive guidance on how to do that.
+
+In Visual Studio, users can apply Quick Launch to instantly explore and complete activities for IDE as elements like templates, options, and menus. One thing to remember is that users can’t apply Quick Launch to explore for code and figures.
+
+2. CTRL+ ] Finds Closing Braces
+With a lot of nested statements, it can be tough to keep track of opening and closing braces which, if missing, can cause compiler errors. Use CTRL+ ] to find the matching closing brace of a function or class and reduce the chance of falling prey to annoying error messages.
+
+3. CTRL+K+F Formats Sloppy Code
+Sometimes making code work comes at the expense of making it look good. Proper indentation and spacing make code readable and that’s how CTRL+K+F works. Just highlight the section you need to format and it cleans up sloppy coding like magic.
+
+4. TAB Automates Tedious Typing
+For loops and if-then conditions have a standard structure that’s tedious to type over and over. To automate that process, you just need to type the beginning of your condition. For example, type ‘Try,’ hit the TAB key twice, and you get access to the snippets that complete the condition for you down to the braces. All you have to do is modify the parameters and you’re good to go.
+
+5. CTRL+SHIFT+F5 to Stop and Re-Build
+This shortcut combines three debugging Visual Studio code commands in one. CTRL+SHIFT+F5 lets you end the debugging session, rebuild it, and create a new debugging session.
+
+6. Hot Keys: CTRL+K+C for Bulk Comment & CTRL+K+C for Uncomment
+Manually adding and removing ‘//’ is tedious especially, if you have a long piece of code you want to deactivate. CTRL+K+C is a quicker way to bulk comment. Just highlight the block and type the Visual Studio shortcuts. When you need to make those lines active again, highlight the block and use CTRL+K+U to uncomment.
+
+You can also use Ctrl+Shift+/ for toggling. The toggling can be used for block comments because Ctrl+/ is a shortcut for toggling line comments and block comments. To execute this, click on the settings and then click ‘Keyboard Shortcuts’. Here you will see a “toggle block.” Now,  click and enter your combination.
+
+7. ALT+SHIFT+ENTER for Improved Full Screen
+Having multiple screens open helps you multitask. But if you want to focus on one section, going full screen used to mean losing important panels like the menu bar. ALT+SHIFT+ENTER lets you go full screen, but you retain access to your menu and panels. Another benefit is that you gain access to another four to 10 extra lines of code, depending on your screen resolution.
+
+8. Ctrl+K+S Automatically Adds Code To Your Conditions
+You’ve got your TRY-CATCH or IF loop structure but still need some code to put inside. Use Ctrl+K+S to open up a contextual menu from which you can choose the snippets you need to populate your condition.
+
+9. Bookmarking Code Hot Keys: CTRL+K+K, CTRL+K+N & CTRL+K+P
+Bookmarks help you keep track of the special markers in your code. For example, if there’s a function that you’re constantly referring to, CTRL+K+K marks that line with a little dot at the left. Additionally, use CTRL+K+N to cycle to the next bookmark in the list and CTRL+K+P for previous bookmarks. Just remember that the bookmark tags the line of the code, not the code itself.
+
+10. CTRL+SHIFT+V for the Clipboard Ring
+The Clipboard Ring is a Visual Studio feature that allows copying multiple code blocks and pasting them. Users can copy various lines of code and put them in the clipboard. These lines of code can then be pasted when required. This improves development productivity. The copied code is stored in a memory, and users can use them in IDE.
+
+CTRL+C allows you to keep the last 15 copied pieces of content in the clipboard. CTRL+SHIFT+V gives you access to this clipboard ring where you can scroll through the list of copied lines until you find the one you want to paste.
+
+11. CTRL+M+M & CTRL+M+O Hot Keys to Collapse Code
+If your code file is too long and you want to make it more manageable, consider minimizing it with CTRL+M+M Visual Studio code shortcut keys. Just select the whole file and use this hotkey to collapse all functions to the most basic view. You can re-expand a specific section to see what you want. You can also use CTRL+M+O to collapse to the definition level, which may be a more useful view.
+
+12. ALT Hot Key for Block Modify
+You have a code block and want to edit an event so that it’s reflected throughout the other lines in the block. Instead of changing each line individually, hold ALT then click and drag to highlight that block. Type the change you want and you’ll see all selected lines change at once.
+
+13. Block Move VS Hot Keys: ALT+↑ & ALT+↓
+In Microsoft, visual studio users can choose a block of text by pressing down the Alt key when choosing code and text with the mouse. This is particularly helpful for selecting a string of data or code as opposed to the whole line.
+
+These Microsoft Visual Studio shortcuts are faster alternatives to copy-move-paste. To change the location of a certain block of code, highlight the lines then click ALT+↑(up arrow) to move all lines up at once or ALT+↓ (down arrow) to move all likes down.
+
+14. F12 & SHIFT+F12 Visual Studio Shortcut Keys to Find References
+In Visual Studio, users can use the Find All References to see where the required code details have referenced the codebase thoroughly. The Find All References is accessible on the context list or just press Shift + F12.
+
+To see the instance of a class, hover over the name and hit F12. To see everywhere you’ve used that class, use SHIFT+F12.
+
+15. CTRL+- & CTRL+SHIFT+- to Step Through History
+These VS code hotkeys are absolutely necessary. Image, you’ve been scrolling down many lines of code and want to go back to some reference that’s 100 lines away. Instead of scrolling up or down to find that place, use CTRL+-(minus) to step backward through the navigation history, which shows everywhere, you’ve clicked and in the order, you clicked them. To go forward, use CTRL+SHIFT+-.
+
+
+16. CTRL+SHIFT+B to Build
+The Build-in Microsoft visual studio means compile and connect only the root files that have been modified since the previous build. The Rebuild feature in Microsoft Visual studio means compile and connect all root files despite whether they changed or not.
+
+CTRL+SHIFT+B is a quicker way to build a solution.
+
+17. CTRL+. for Autocomplete
+Use these Visual Studio keyboard shortcuts if you want to create a new task, for example. Type the word ‘task’ and use CTRL+. (dot) to see a menu. Press enter and you’ll see the namespace appear. Autocomplete helps with any coding issues, such as maintaining naming conventions.
+
+18. CTRL+R+R Renames A Property
+You do a build and find that you didn’t name a property properly. Instead of hunting for every reference, click on the variable and use CTRL+R+R. This hotkey will not only rename the property but also change the name wherever it’s referenced. When you click Apply, you’ll see all the references it will rename.
+
+19. F11 Steps Into Constructor
+These Visual Studio hotkeys can be useful when you’re debugging. If you want to step into a function as far as it can go and not just move to the next line, press F11 to jump into the constructor.
+
+Always remember that it doesn’t work if you are debugging a static constructor. If not, then it works as usual. For this, the constructor is only called the once. So, before the class is accessed for the first time always make sure that the debugger is attached to it.
+
+20. ALT+ENTER for Quick Action
+When you see the light bulb, it means there’s an easier action to take. You can take advantage of the hotkey shortcuts. For example, if you have unused USING statements or if you want to add a clause, ALT+ ENTER will get rid of unnecessary statements as well as add that recommended snippet to your clause.
+
+21. Ctrl+K for Removing Bookmarks
+Visual Studio contains a characteristic that enables users to add a bookmark. This bookmark can be added to a line of code in a solution. As with a regular bookmark that instantly enables users to go back to the last place, the Visual Studio allows users to immediately find a labeled line in the code. Users can generate many bookmarks and they can instantly navigate between them. Now, to remove this bookmark we have a shortcut key Ctrl+K.
+
+These Visual Studio code hotkeys are useful for removing the syntax of the comment from the prevailing line or currently marked lines of code. For example, if you are using the code editor and you want to remove the already written syntax of comments then Ctrl-K comes under the text manipulation Visual Studio keyboard shortcuts.
+
+22. Ctrl+Shift+O for Opening a Project
+This key is the part of project-related shortcuts. For example, you are using a Microsoft Visual Studio and you have developed a new project called “MyProject”. Now, if you want to open this project in the code editor then Ctrl+Shift+O can be used. The project Visual Studio code shortcut keys are very useful if you are working on a big project and repositories.
+
+23. Ctrl+Alt+Insert to override the base class
+This shortcut key is also the part of project-related Visual Studio shortcut keys. For example, if you want to override base class methods. Now, you want to achieve this in an already derived class when an overridable method is called. To execute this in the Class View pane you can use Ctrl+Alt+Insert key.
+
+24. Ctrl+I for incremental search
+This shortcut key is the part of Search and replaces related Visual Studio hotkeys. This hotkey starts an incremental search. After pressing Ctrl+I, the user can insert the text. Once the text has been entered, this key will help in finding the text and the related pattern. The search and replace Visual Studio keyboard shortcuts are useful in finding various codes and comments from the code editor.
+
+25. Alt+F3, R for Regular Expression
+This shortcut key is also the part of Search and replaces related Visual Studio code shortcuts. This key is used for selecting or clearing the Regular Expression option. With the help of Alt+F3, R  the special characters can be used in the Find and Replace methods.
+
+26. Ctrl+Alt+M,1 for Memory 1 window
+This key is the part of Debugging related Visual Studio commands. This shortcut key displays the Memory 1 window to observe memory in the method being debugged. This is especially beneficial when you do not have debugging figures ready for the code. It is also important for studying at large buffers.
+
+27. Ctrl+Alt+J for Object Browser
+This key is the part of Object browser-related Microsoft Visual Studio shortcuts. This displays the Object Browser to inspect the classes, attributes, processes, events, and constants specified either in the project or by elements and sample libraries referenced by the project.
+
+28. Ctrl+Shift+M for Tool window
+In the visual studio, the Tool window is a child window of the integrated development environment. The IDE is used to display various information. Each view includes two tool window collections. These are known as primary, the secondary. In this, only one tool window from each collection or group can be active.
+
+This shortcut key is the part of Tool window related commands. This switches the window inside or out of a method enabling text inside the window to be chosen.
+
+29. Ctrl-Page down for Window manipulation
+This key is the part of Windows manipulation related Visual Studio code shortcut keys. It allows moving to the next tab in the document or window. For example, if you can switch the HTML editor from its design view to HTML view.
+
+30. Shift+F8 for the cursor
+Visual Studio enables users to create cursors. In Visual Studio, users can create a cursor file. This File is a bitmap file with . cur extension. For creating this file, just right click on the selected project and select Add New Item. Now, select Cursor File and this will create a .cur file.
+
+This shortcut key is the part of General Visual Studio code commands. This key moves the cursor to the preceding item, for instance in the TaskList window or Find Results window.
+
+31.Ctrl+Alt+L for Solution Explorer
+This hotkey displays the Solution Explorer. The solution explorer is responsible for listing the projects and files in the current solution of the project. The solution explorer is a window that allows users to explore and maintain all projects.
+
+32. Ctrl+Alt+X for Toolbox
+This hotkey displays the Toolbox. The toolbox is an important component of VS. It includes controls and other objects that can be moved into editor window and designer windows. Many controls can be easily added to the projects with the help of a toolbox.
+
+33. Shift+F4
+This hotkey displays the property pages for the objects and controls currently selected. For instance, one can use Shift+F4 to display a project’s settings and many other such properties. Users can modify and see the configuration by using this hotkey.
+
+34. Ctrl+Alt+R
+This hotkey is used to display the web browser window in the Visual Studio. The Ctrl+Alt+R enables users to view or monitor various web pages on the Internet.
+
+35. Alt+F8
+This hotkey is used to display the Macro Explorer window. It lists all available macros. Macros allow users to automate repetitive tasks in the IDE. The Alt+F8 is one of the important hotkeys in Visual Studio.
+
+36. Ctrl+Shift+G
+The Ctrl+Shift+G is used to define the elements to be adjusted by utilizing a hidden grid. The grid spacing can be configured on the Design pane of HTML designer and the grid will automatically adjust itself the next time users open a document.
+
+37. Ctrl+Shift+L
+This Visual Studio hotkey is used to display the bookmark dialog. Users can use bookmarks to identify or point particular code lines to comment on important messages or to quickly return to a particular location. The Ctrl+K shortcut is used to add a bookmark.
+
+38. Ctrl+F9
+The Ctrl+F9 enables or disables the breakpoint. It is used to define the breakpoint on the current line of code. It is one of the handy hotkeys of Visual Studio.
+
+39. F5
+The F5 hotkey is used to debug the application. It is used to run the application in the debugger mode and it displays what the code is doing when it runs. On the other hand, the ctrl + F5 hotkey is used to execute the application without the debugger.
+
+40. Ctrl+Alt+I
+This Visual Studio shortcut comes under window management hotkeys. It is used to open the immediate window. The immediate window enables communication with parameters and variables when the written program is in the debug mode. It allows the modification and inspection of the variables or parameters of the written code.
+
+41. Ctrl+Shift+1
+This hotkey is widely used by developers for checking things. This hotkey allows developers to navigate to the subsequent description, information, or reference of an object. It is accessible in the object browser and Class View window. It is also accessible in source editing windows with the Shift+F12 shortcut.
+
+It is one of the most widely used hotkeys. This hotkey is also used to invoke the View.BrowseNext. It comes under the View section of Visual Studio hotkeys. The hotkey Ctrl+Shift+2 is used to invoke the View.BrowsePrevious. In short, it comes under the View class and also called a navigation shortcut.
+
+
+-------------------------------------------------------------------------------------------------------------------------
 
 Modele deploy-api
 Publish do systemu plików + podpiecie pod IIS-a
