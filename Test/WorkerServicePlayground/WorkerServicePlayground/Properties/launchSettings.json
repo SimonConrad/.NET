@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "WorkerServicePlayground": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
